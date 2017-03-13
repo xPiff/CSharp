@@ -1,0 +1,10 @@
+You Need:
+- 1 Label
+
+
+Code:
+
+UTF8Encoding utf8 = new UTF8Encoding();
+WebClient webClient = new WebClient();
+String externalIp = utf8.GetString(webClient.DownloadData("http://ipinfo.io/ip"));
+label1.Text = externalIp;
