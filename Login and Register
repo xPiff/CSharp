@@ -1,0 +1,20 @@
+You Need:
+- 2 Textboxes
+- 2 Buttons
+
+Register Button Code:
+
+using (StreamWriter Writer = new StreamWriter(@"C:\Logs\sLogs.txt"))
+     {
+        Writer.WriteLine(textBox1.Text + textBox2.Text);  // Puts username & password on 1 line
+     }
+     
+     
+Login Button Code:
+
+if (File.ReadLines(@"C:\Logs\sLogs.txt").Contains(textBox1.Text + textBox2.Text)) //reads the username and password off 1 line
+     {
+        MainForm mainf = new MainForm();
+        mainf.Show();
+        this.Dispose();
+     }
